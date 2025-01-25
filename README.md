@@ -6,6 +6,9 @@ apt update && apt upgrade -y
 git clone github.com/AlwaysBoytzz/Premium.git
 ```
 ```
+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
+```
+```
 cd UbotPrem && screen -S UbotPrem 
 ```
 ```
