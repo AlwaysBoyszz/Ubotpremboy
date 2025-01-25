@@ -50,5 +50,5 @@ OWNER BOT : <a href=tg://openmessage?user_id={OWNER_ID}>@Boyszzzz</a>
 """
 
     def POLICY():
-        return """ ᴊɪᴋᴀ ᴀᴅᴀ ᴋᴇɴᴅᴀʟᴀ sɪʟᴀʜᴋᴀɴ ʜᴜʙᴜɴɢɪ  <a href=tg://openmessage?user_id={OWNER_ID}>@Boyszzzz</a> 
+        return """ <blockquote><b>ᴊɪᴋᴀ ᴀᴅᴀ ᴋᴇɴᴅᴀʟᴀ sɪʟᴀʜᴋᴀɴ ʜᴜʙᴜɴɢɪ  <a href=tg://openmessage?user_id={OWNER_ID}>@Boyszzzz</a></b></blockquote>
 """
