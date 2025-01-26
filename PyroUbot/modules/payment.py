@@ -70,7 +70,7 @@ qʀɪꜱ : ||https://telegra.ph//file/218804c0d32ec424b1c8f.jpg||
 @PY.CALLBACK("^(kurang|tambah)")
 async def _(client, callback_query):
     BULAN = int(callback_query.data.split()[1])
-    HARGA = 20
+    HARGA = 10
     QUERY = callback_query.data.split()[0]
     try:
         if QUERY == "kurang":
