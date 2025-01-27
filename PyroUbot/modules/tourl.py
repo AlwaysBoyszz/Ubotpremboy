@@ -28,7 +28,7 @@ async def upload_file(buffer: BytesIO) -> str:
     form.add_field('reqtype', 'fileupload')
 
     async with aiohttp.ClientSession() as session:
-        async with session.post('https://i.supa.codes', data=form) as response:
+        async with session.post('https://catbox.moe/user/api.php', data=form) as response:
             if response.status != 200:
                 raise Exception(f"Failed to upload file: {response.status}")
             return await response.text()
@@ -43,7 +43,7 @@ async def _(client, message):
             buffer = BytesIO(f.read())
             try:
                 media_url = await upload_file(buffer)
-                await message.reply(f"<b>berhasil diupload ke : <a href='{media_url}'>catbox.moe</a></b>")
+                await message.reply(f"<b>berhasil diupload ke : <a href='{media_url}'>LINK NYA KINGZ</a></b>")
             except Exception as e:
                 await message.reply(f"Error: {e}")
     else:
