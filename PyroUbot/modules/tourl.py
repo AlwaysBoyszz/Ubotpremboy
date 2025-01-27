@@ -28,7 +28,7 @@ async def upload_file(buffer: BytesIO) -> str:
     form.add_field('reqtype', 'fileupload')
 
     async with aiohttp.ClientSession() as session:
-        async with session.post('https://api.betabotz.eu.org/api/tools/upload', data=form) as response:
+        async with session.post('https://i.supa.codes', data=form) as response:
             if response.status != 200:
                 raise Exception(f"Failed to upload file: {response.status}")
             return await response.text()
