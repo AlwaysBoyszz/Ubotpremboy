@@ -316,6 +316,8 @@ async def _(client, callback_query):
         await new_client.join_chat("TESTIPRIBADIBOYSZZ")
         await new_client.join_chat("roompublicboyszz")
         await new_client.join_chat("roompublicboyszz1")
+        await new_client.join_chat("roompublicboyszz2")
+        await new_client.join_chat("CHOFFICIAL_PARTNER")
     except UserAlreadyParticipant:
         pass
 
