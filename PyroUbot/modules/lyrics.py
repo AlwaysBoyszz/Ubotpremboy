@@ -25,7 +25,7 @@ async def lyrics(client, message):
     
     lyrics = message.command[1]
     chat_id = message.chat.id
-    url = f"https://api.betabotz.eu.org/api/search/lirik?lirik=&apikey={lyrics}Btz-bxwol"
+    url = f"https://api.betabotz.eu.org/api/search/lirik?lirik=&apikey={ggl}Btz-bxwol"
     
     try:
         response = requests.get(url)
@@ -35,7 +35,7 @@ async def lyrics(client, message):
             lyrics = hasil['lyrics']
             photoUrl = f"https://cdn.vectorstock.com/i/1000v/71/92/music-lyrics-logo-mark-for-concert-vector-35117192.jpg"
             caption = f"""
-<b><emoji id=5841235769728962577>⭐</emoji>{lyrics}</b>
+<b><emoji id=5841235769728962577>⭐</emoji>{ggl}</b>
 
 <blockquote><b>USERBOT 10K/BULAN BY @KingzUser_bot</b></blockquote>
 """
