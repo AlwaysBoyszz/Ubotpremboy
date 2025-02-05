@@ -5,20 +5,20 @@ from PyroUbot import *
 class EMO:
     async def PING(client):
         emot_1 = await get_vars(client.me.id, "EMOJI_PING")
-        emot_ping = emot_1 if emot_1 else "5873121439430742736"
-        _pong = f"<emoji id={emot_ping}>🖤</emoji>"
+        emot_ping = emot_1 if emot_1 else "5895254947800291880"
+        _pong = f"<emoji id={emot_ping}>⭐️</emoji>"
         return _pong
 
     async def MENTION(client):
         emot_2 = await get_vars(client.me.id, "EMOJI_MENTION")
-        emot_tion = emot_2 if emot_2 else "6037104716721164421"
-        _men = f"<emoji id={emot_tion}>🐰</emoji>"
+        emot_tion = emot_2 if emot_2 else "5895553744380103925"
+        _men = f"<emoji id={emot_tion}>⭐️</emoji>"
         return _men
 
     async def UBOT(client):
         emot_3 = await get_vars(client.me.id, "EMOJI_USERBOT")
-        emot_xbot = emot_3 if emot_3 else "6037329390755384592"
-        _ubt = f"<emoji id={emot_xbot}>💀</emoji>"
+        emot_xbot = emot_3 if emot_3 else "5895702479097564641"
+        _ubt = f"<emoji id={emot_xbot}>⭐️</emoji>"
         return _ubt
     
     async def PROSES(client):
