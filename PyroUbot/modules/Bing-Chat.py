@@ -14,7 +14,7 @@ perintah : <code>{0}bing</code>
 """
 
 
-@PY.UBOT("bard")
+@PY.UBOT("bing")
 @PY.TOP_CMD
 async def chat_gpt(client, message):
     try:
