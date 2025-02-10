@@ -3,19 +3,19 @@
 apt update && apt upgrade -y
 ```
 ```
-git clone github.com/AlwaysBoyszz/Premium.git
+git clone https://github.com/AlwaysBoyszz/Ubotpremboy
 ```
 ```
 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
 ```
 ```
-cd Premium && screen -S Premium
+cd Ubotpremboy && screen -S Ubotpremboy
 ```
 ```
 bash installnode.sh && apt install python3.10-venv
 ```
 ```
-python3 -m venv Premium && source UbotPrem/bin/activate
+python3 -m venv Ubotpremboy && source Ubotpremboy/bin/activate
 ```
 ```
 pip3 install -r requirements.txt
