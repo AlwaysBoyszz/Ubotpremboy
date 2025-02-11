@@ -21,7 +21,7 @@ class MSG:
 🚀ʙᴏᴛ ɪɴɪ ᴅɪᴋᴇᴍʙᴀɴɢᴋᴀɴ ᴏʟᴇʜ <a href=tg://openmessage?user_id={OWNER_ID}>@Boyszzzz</a> ᴊɪᴋᴀ ᴀᴅᴀ ᴋᴇsᴀʟᴀʜᴀɴ ᴀᴛᴀᴜᴘᴜɴ ᴍᴀsᴀʟᴀʜ ᴅᴍ ᴏᴡɴᴇʀ ʙᴏᴛ ʏᴀɪᴛᴜ: <a href=tg://openmessage?user_id={OWNER_ID}>@Boyszzzz</a>
 
 ʟɪsᴛ ʜᴀʀɢᴀ & ᴋᴇʙᴜᴛᴜʜᴀɴ ᴜsᴇʀʙᴏᴛ:
-<a href=t.me/TESTIPRIBADIBOYSZZ/10>ʟɪsᴛ ᴋɪɴɢᴢᴜsᴇʀʙᴏᴛ</a>
+<a href=https://t.me/TESTIPRIBADIBOYSZZ/10>ʟɪsᴛ ᴋɪɴɢᴢᴜsᴇʀʙᴏᴛ</a>
 
 ᴋʟɪᴋ ᴛᴏᴍʙᴏʟ ᴅɪʙᴀᴡᴀʜ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ</b></blockquote>
 """
