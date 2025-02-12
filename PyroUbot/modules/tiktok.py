@@ -5,7 +5,7 @@ __MODULE__ = "ᴛɪᴋᴛᴏᴋ"
 __HELP__ = """
 <blockquote> <b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛɪᴋᴛᴏᴋ
 
-ᴘᴇʀɪɴᴛᴀʜ : <code>{0}tt</code> vidio atau music <b>[link nya]</b>
+ᴘᴇʀɪɴᴛᴀʜ : <code>{0}tiktok</code> tiktok <b>[link nya]</b>
 ᴘᴇɴᴊᴇʟᴀsᴀɴ : ᴅᴏᴡɴʟᴏᴀᴅ ᴠᴛ ɴᴏ ᴡᴍ , ᴠɪᴅɪᴏ ᴜɴᴛᴜᴋ ᴠɪᴅᴇᴏ ᴍᴜsɪᴄ ᴜɴᴛᴜᴋ ᴍᴜsɪᴋ.</b></blockquote>
 
 """
