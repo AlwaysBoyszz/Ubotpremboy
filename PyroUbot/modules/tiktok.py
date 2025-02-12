@@ -18,7 +18,7 @@ async def tiktok_handler(client, message):
         return
 
     url = message.command[1]
-    proses_message = await message.reply("```\nprosess...```")
+    proses_message = await message.reply("```\nProsess Kingz...```")
 
     try:
         response = requests.get(f"https://api.diioffc.web.id/api/download/tiktok?url={url}")
@@ -30,7 +30,7 @@ async def tiktok_handler(client, message):
         else:
             video_url = data["result"]["play"]
             video_caption = data["result"]["title"]
-            await client.send_video(message.chat.id, video_url, caption=f"```\ndone bay gua```")
+            await client.send_video(message.chat.id, video_url, caption=f"```\nDONE KINGZ```")
 
             audio_url = data["result"]["music_info"]["play"]
             audio_title = data["result"]["music_info"]["title"]
