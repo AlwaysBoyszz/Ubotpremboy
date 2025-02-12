@@ -9,8 +9,8 @@ __MODULE__ = "ᴛɪᴋᴛᴏᴋ"
 __HELP__ = """
 <blockquote> <b>Bantuan Untuk Tiktok
 
-Perintah : <code>{0}tt</code> vidio atau music <b>[link nya]</b>
-  Download Vt No Wm , vidio untuk video music untuk musik.</b></blockquote>
+Perintah : <code>{0}tiktok</code> tiktok <b>[link nya]</b>
+  Download Vt No Wm.</b></blockquote>
 
 """
 
