@@ -1,40 +1,53 @@
-import asyncio
-import requests
-import os
-from pyrogram.raw.functions.messages import DeleteHistory
-import aiohttp
 from PyroUbot import *
+import requests
 
 __MODULE__ = "ᴛɪᴋᴛᴏᴋ"
 __HELP__ = """
-<blockquote> <b>Bantuan Untuk Tiktok</b>
+<blockquote> <b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛɪᴋᴛᴏᴋ
 
-• <b>Perintah</b> : <code>{0}tt</code> tt <b>[link nya]</b>
-• <b>Penjelasan : Download Vt No wm</b></blockquote>
+ᴘᴇʀɪɴᴛᴀʜ : <code>{0}tt</code> vidio atau music <b>[link nya]</b>
+ᴘᴇɴᴊᴇʟᴀsᴀɴ : ᴅᴏᴡɴʟᴏᴀᴅ ᴠᴛ ɴᴏ ᴡᴍ , ᴠɪᴅɪᴏ ᴜɴᴛᴜᴋ ᴠɪᴅᴇᴏ ᴍᴜsɪᴄ ᴜɴᴛᴜᴋ ᴍᴜsɪᴋ.</b></blockquote>
 
 """
 
-@PY.UBOT("tt")
-async def sosmed_cmd(client, message):
+@PY.UBOT("tiktok")
+@PY.TOP_CMD
+async def tiktok_handler(client, message):
     if len(message.command) < 2:
-        return await message.reply(
-            f"<code>{message.text}</code> link tiktok"
-        )
-    else:
-        bot = "downloader_tiktok_bot"
-        link = message.text.split()[1]
-        await client.unblock_user(bot)
-        Tm = await message.reply("<code>processing . . .</code>")
-        xnxx = await client.send_message(bot, link)
-        await asyncio.sleep(10)
-        try:
-            sosmed = await client.get_messages(bot, xnxx.id + 2)
-            await sosmed.copy(message.chat.id, reply_to_message_id=message.id)
-            await Tm.delete()
-        except Exception:
-            await Tm.edit(
-                "<b>video tidak ditemukan silahkan ulangi beberapA saat lagi</b>"
-            )
-        user_info = await client.resolve_peer(bot)
-        return await client.invoke(DeleteHistory(peer=user_info, max_id=0, revoke=True))
+        await message.reply("linknya mana?")
+        return
 
+    url = message.command[1]
+    proses_message = await message.reply("```\nprosess...```")
+
+    try:
+        response = requests.get(f"https://api.diioffc.web.id/api/download/tiktok?url={url}")
+        data = response.json()
+
+        if "images" in data["result"]:
+            for img_url in data["result"]["images"]:
+                await client.send_photo(message.chat.id, img_url)
+        else:
+            video_url = data["result"]["play"]
+            video_caption = data["result"]["title"]
+            await client.send_video(message.chat.id, video_url, caption=f"```\ndone bay gua```")
+
+            audio_url = data["result"]["music_info"]["play"]
+            audio_title = data["result"]["music_info"]["title"]
+            audio_author = data["result"]["music_info"]["author"]
+            audio_cover = data["result"]["music_info"]["cover"]
+
+            await client.send_audio(
+                message.chat.id,
+                audio_url,
+                title=audio_title,
+                performer=audio_author,
+                thumb=audio_cover
+            )
+
+        await proses_message.delete()
+
+    except Exception as e:
+        await proses_message.delete()
+        await message.reply(f"Error \n{e}")
+        
