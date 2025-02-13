@@ -30,7 +30,7 @@ async def chat_gpt(client, message):
             response = requests.get(f'https://api.diioffc.web.id/api/ai/luminai?query={a}')
 
             try:
-                if "message" in response.json():
+                if "result" in response.json():
                     x = response.json()["result"]                  
                     await prs.edit(
                       f"<blockquote>{x}</blockquote>"
