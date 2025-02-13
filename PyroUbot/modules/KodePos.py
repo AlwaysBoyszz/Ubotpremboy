@@ -7,10 +7,10 @@ from pyrogram.types import Message
 
 __MODULE__ = "ᴋᴏᴅᴇ ᴘᴏs"
 __HELP__ = """
-<blockquote><b>Bantuan Untuk kode pos
+<blockquote><b>Bantuan Untuk kode pos desa
 
 perintah : <code>{0}kdps</code>
-    dapat membantu melihat code pos</b></blockquote>
+    dapat membantu melihat code pos suatu desa</b></blockquote>
 """
 
 
@@ -22,7 +22,7 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .kdps cilacap"
+                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .kdps nama desa"
             )
         else:
             prs = await message.reply_text(f"<emoji id=5319230516929502602>🔍</emoji>mencari....")
@@ -30,14 +30,8 @@ async def chat_gpt(client, message):
             response = requests.get(f'https://api.botcahx.eu.org/api/search/kodepos?query={a}&apikey=Boyy')
 
             try:
-                if response.status_code == 200:
-            data = response.json()
-            hasil = data['result']['result']
-            province = hasil['province']
-            city = hasil['city']
-            district = hasil['district']
-            village = hasil['village']
-            postalCode = hasil['postalCode']               
+                if "result" in response.json():
+                    x = response.json()["result"]                  
                     await prs.edit(
                       f"<blockquote>{x}</blockquote>"
                     )
