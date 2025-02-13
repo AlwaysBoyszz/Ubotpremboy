@@ -31,7 +31,7 @@ async def chat_gpt(client, message):
 
             try:
                 if "result" in response.json():
-                    x = response.json()["result"]                  
+                    x = response.json()[""]                  
                     await prs.edit(
                       f"<blockquote>{x}</blockquote>"
                     )
