@@ -30,8 +30,14 @@ async def chat_gpt(client, message):
             response = requests.get(f'https://api.botcahx.eu.org/api/search/kodepos?query={a}&apikey=Boyy')
 
             try:
-                if "result" in response.json():
-                    x = response.json()["result"]                  
+                if response.status_code == 200:
+            data = response.json()
+            hasil = data['result']['result']
+            province = hasil['province']
+            city = hasil['city']
+            district = hasil['district']
+            village = hasil['village']
+            postalCode = hasil['postalCode']               
                     await prs.edit(
                       f"<blockquote>{x}</blockquote>"
                     )
