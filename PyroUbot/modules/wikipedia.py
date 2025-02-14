@@ -2,6 +2,14 @@ import aiohttp
 from bs4 import BeautifulSoup
 from PyroUbot import *
 
+__MODULE__ = "ᴡɪᴋɪᴘᴇᴅɪᴀ"
+__HELP__ = """
+<blockquote><b>Bantuan Untuk wikipedia
+
+Perintah : <code>{0}wiki/wikipedia</code>
+    Wikipedia menyediakan informasi tentang berbagai topik, mulai dari sejarah, sains, budaya, hingga teknologi.</b></blockquote>
+"""
+
 async def wikipedia(query):
     try:
         url = f"https://id.wikipedia.org/wiki/{query}"
