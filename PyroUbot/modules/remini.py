@@ -14,7 +14,7 @@ __HELP__ = """
 
 async def upload_media(message):
     media = await message.reply_to_message.download()
-    url = "https://itzpire.com/tools/upload"
+    url = "https://catbox.moe/user/api.php"
 
     async with aiohttp.ClientSession() as session:
         # Cek apakah media adalah objek file atau path
