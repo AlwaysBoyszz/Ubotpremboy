@@ -54,7 +54,7 @@ async def _(client, message):
             await xx.edit("<b>Penggunaan salah, mohon reply foto.</b>")
             return
         
-        api_url = f'https://api.botcahx.eu.org/api/tools/remini?url={foto}&apikey=Boysz'
+        api_url = f'https://api.botcahx.eu.org/api/tools/remini?url={foto}&apikey=Boyy'
         
         async with aiohttp.ClientSession() as session:
             async with session.get(api_url) as api_response:
