@@ -28,7 +28,7 @@ async def adzan(client, message):
         return
     result = req.json()
     txt = f"""
-**Jadwal Shalat Wilayah <u>{lok}</u>
+<blockquote><b>**Jadwal Shalat Wilayah <u>{lok}</u>
 Tanggal `{result['items'][0]['date_for']}`
 Kota `{result['query']} | {result['country']}`
 
@@ -37,6 +37,6 @@ Subuh : `{result['items'][0]['fajr']}`
 Zuhur :`{result['items'][0]['dhuhr']}`
 Ashar : `{result['items'][0]['asr']}`
 Maghrib : `{result['items'][0]['maghrib']}`
-Isya : `{result['items'][0]['isha']}`**
+Isya : `{result['items'][0]['isha']}`**</b></blockquote>
 """
     await message.reply_text(txt)
