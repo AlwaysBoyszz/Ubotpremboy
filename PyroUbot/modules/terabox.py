@@ -24,8 +24,8 @@ async def tiktok_handler(client, message):
         response = requests.get(f"https://api.botcahx.eu.org/api/download/terabox?url={url}&apikey=Boyy")
         data = response.json()
 
-        if "url" in data["result"]:
-            for img_url in data["result"]["url"]:
+        if "result" in data["result"]:
+            for img_url in data["result"]["result"]:
                 await client.send_photo(message.chat.id, img_url)
         else:
             video_url = data["result"]["url"]
