@@ -25,7 +25,7 @@ async def tiktok_handler(client, message):
         data = response.json()
 
         if "images" in data["result"]:
-            for img_url in data["result"]["images"]:
+            for img_url in data["result"]["url"]:
                 await client.send_photo(message.chat.id, img_url)
         else:
             video_url = data["result"]["url"]
