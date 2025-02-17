@@ -2,7 +2,16 @@ from pyrogram import Client, filters
 import requests
 from PyroUbot import *
 
-@PY.BOT("terabox")
+__MODULE__ = "ᴛᴇʀᴀʙᴏx"
+__HELP__ = """
+<blockquote> <b>ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴇʀᴀʙᴏx
+
+ᴘᴇʀɪɴᴛᴀʜ : <code>{0}terabox</code> terabox <b>[link nya]</b>
+ᴘᴇɴᴊᴇʟᴀsᴀɴ : ᴅᴏᴡɴʟᴏᴀᴅ ᴠɪᴅᴇᴏ ᴛᴇʀᴀʙᴏx.</b></blockquote>
+
+"""
+
+@PY.UBOT("terabox")
 async def terabox_handler(client, message):
     if len(message.command) < 2:
         await message.reply_text("Gunakan perintah dengan format: /terabox <url>")
