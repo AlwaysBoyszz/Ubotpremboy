@@ -137,22 +137,22 @@ class BTN:
     def START(message):
         if not message.from_user.id == OWNER_ID:
             button = [
-                [InlineKeyboardButton("🔥 ʙᴇʟɪ ᴜꜱᴇʀʙᴏᴛ 🔥", callback_data="bahan")],
+                [InlineKeyboardButton("✭ ʙᴇʟɪ ᴜꜱᴇʀʙᴏᴛ ✭", callback_data="bahan")],
                 [
-                    InlineKeyboardButton("🏆 ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 🏆", callback_data="buat_ubot"),
-                    InlineKeyboardButton("📁 ʜᴇʟᴘ ᴍᴇɴᴜ 📁", callback_data="help_back")
+                    InlineKeyboardButton("♛ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ ♛", callback_data="buat_ubot"),
+                    InlineKeyboardButton("卍 ʜᴇʟᴘ ᴍᴇɴᴜ 卍", callback_data="help_back")
                 ],
-                [InlineKeyboardButton("💬 sᴜᴘᴘᴏʀᴛ 💬", callback_data="support")]
+                [InlineKeyboardButton("♚ sᴜᴘᴘᴏʀᴛ ♚", callback_data="support")]
             ]
         else:
             button = [
-                [InlineKeyboardButton("🔥 ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ 🔥", callback_data="bahan")],
+                [InlineKeyboardButton("♛ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ ♛", callback_data="bahan")],
                 [
-                    InlineKeyboardButton("🛠️ ɢɪᴛᴘᴜʟʟ", callback_data="cb_gitpull"),
+                    InlineKeyboardButton("✭ɢɪᴛᴘᴜʟʟ✭", callback_data="cb_gitpull"),
                     InlineKeyboardButton("ʀᴇsᴛᴀʀᴛ 🔁", callback_data="cb_restart")
                 ],
                 [
-                    InlineKeyboardButton("🤖 ʟɪsᴛ ᴜsᴇʀʙᴏᴛ 🤖", callback_data="cek_ubot")
+                    InlineKeyboardButton("卍 ʟɪsᴛ ᴜsᴇʀʙᴏᴛ 卍", callback_data="cek_ubot")
                 ]
             ]
         return button
