@@ -149,7 +149,7 @@ class BTN:
                 [InlineKeyboardButton("♛ ʙᴜᴀᴛ ᴜsᴇʀʙᴏᴛ ♛", callback_data="bahan")],
                 [
                     InlineKeyboardButton("✭ɢɪᴛᴘᴜʟʟ✭", callback_data="cb_gitpull"),
-                    InlineKeyboardButton("ʀᴇsᴛᴀʀᴛ 🔁", callback_data="cb_restart")
+                    InlineKeyboardButton("✭ʀᴇsᴛᴀʀᴛ✭", callback_data="cb_restart")
                 ],
                 [
                     InlineKeyboardButton("卍 ʟɪsᴛ ᴜsᴇʀʙᴏᴛ 卍", callback_data="cek_ubot")
