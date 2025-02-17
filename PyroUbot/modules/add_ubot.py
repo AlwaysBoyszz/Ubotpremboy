@@ -31,7 +31,7 @@ async def _(client, callback_query):
     user_id = callback_query.from_user.id
     if user_id in ubot._get_my_id:
         buttons = [
-            [InlineKeyboardButton("🔃 ʀᴇꜱᴛᴀʀᴛ", callback_data=f"ress_ubot")],
+            [InlineKeyboardButton("✭ʀᴇꜱᴛᴀʀᴛ✭", callback_data=f"ress_ubot")],
             [InlineKeyboardButton("ᴋᴇᴍʙᴀʟɪ", callback_data=f"home {user_id}")],
         ]
         return await callback_query.edit_message_text(
