@@ -26,7 +26,7 @@ async def _(client, message):
         try:
             data = response.json()
 
-            if "result" in data and "surah" in data["result"]:
+            if "result" in data and "message" in data["result"]:
                 x = data["result"]["surah"]
                 y = data["result"]["tafsir"]
                 await prs.edit(f"<blockquote>SURAH: {x}                                 TAFSIR: {y}</blockquote>")
