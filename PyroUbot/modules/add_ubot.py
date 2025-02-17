@@ -13,10 +13,12 @@ from PyroUbot import *
 @PY.BOT("start")
 @PY.START
 @PY.PRIVATE
-async def _(client, message):
-    buttons = BTN.START(message)
+async def cb_home(client, message):
+    user_id = message.from_user.id
+    buttons = BTN.START(user_id)
     msg = MSG.START(message)
-    await message.reply(msg, reply_markup=InlineKeyboardMarkup(buttons))
+    pantek = "https://files.catbox.moe/94ii8p.jpg"
+    await bot.send_photo(user_id, pantek, caption=msg, reply_markup=buttons)
 
 
 @PY.CALLBACK("bahan")
