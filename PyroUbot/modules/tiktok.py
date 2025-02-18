@@ -21,22 +21,18 @@ async def tiktok_handler(client, message):
     proses_message = await message.reply("```\nProsess Kingz...```")
 
     try:
-        response = requests.get(f"https://api.diioffc.web.id/api/download/tiktok?url={url}")
+        response = requests.get(f"https://api.botcahx.eu.org/api/dowloader/tiktok?url={url}&apikey=Boyy")
         data = response.json()
 
         if "images" in data["result"]:
             for img_url in data["result"]["images"]:
                 await client.send_photo(message.chat.id, img_url)
         else:
-            video_url = data["result"]["play"]
+            video_url = data["result"]["video"]
             video_caption = data["result"]["title"]
             await client.send_video(message.chat.id, video_url, caption=f"```\nDONE KINGZ```")
 
-            audio_url = data["result"]["music_info"]["play"]
-            audio_title = data["result"]["music_info"]["title"]
-            audio_author = data["result"]["music_info"]["author"]
-            audio_cover = data["result"]["music_info"]["cover"]
-
+            audio_url = data["result"]["audio"]
             await client.send_audio(
                 message.chat.id,
                 audio_url,
