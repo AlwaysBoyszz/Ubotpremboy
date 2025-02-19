@@ -14,8 +14,8 @@ Sumber: Random generator berdasarkan nama.</blockquote></b>
 """
 
 KHODAM_LIST = [
-    "1%🤮", "55%🙂", "30%🙃", "70%😉",
-    "90%😎", "100%🤯", "4%🤢", "10%😖", "1000%😱"
+    "4% (JELEK)🤮", "55% (MAYAN)🙂", "30% (AGAK JELEK)🙃", "70% (GK TERLALU GANTENG)😗",
+    "90%(GANTENG)😎", "100%(GANTENG BINGIT)🤯", "1% (KAYA JEMBUT)🤢", "10% (KAYA PALKON)😖", "1000%(IDAMAN)😱"
 ]
 
 @PY.UBOT("cektmpn")
