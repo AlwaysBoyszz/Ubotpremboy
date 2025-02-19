@@ -41,10 +41,10 @@ async def create_bot_command(client, message):
         await client.send_message(botfather, bot_username)
 
         await message.reply_text(
-            f"✅ **Permintaan pembuatan bot telah dikirim ke @BotFather!**\n"
-            f"🆕 **Nama Bot:** `{bot_name}`\n"
+            f"<blockquote><b>✅ **Permintaan pembuatan bot telah dikirim ke @BotFather!**\n"
+            f"🤖 **Nama Bot:** `{bot_name}`\n"
             f"🔗 **Username:** @{bot_username}\n\n"
-            "Silakan cek @BotFather untuk melanjutkan proses konfigurasi."
+            "Silakan cek @BotFather untuk melanjutkan proses konfigurasi.</blockquote></b>"
         )
     
     except Exception as e:
