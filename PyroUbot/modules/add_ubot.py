@@ -338,7 +338,7 @@ async def _(client, callback_query):
             [
                 [
                     InlineKeyboardButton(
-                        "📁 ᴄᴇᴋ ᴍᴀsᴀ ᴀᴋᴛɪғ 📁",
+                        "✰ ᴄᴇᴋ ᴍᴀsᴀ ᴀᴋᴛɪғ ✰",
                         callback_data=f"cek_masa_aktif {new_client.me.id}",
                     )
                 ],
