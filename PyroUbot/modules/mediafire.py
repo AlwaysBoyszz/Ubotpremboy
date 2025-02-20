@@ -34,7 +34,7 @@ async def _(client, message):
             filesize = file_info["filesize"]
             file_url = file_info["url"]
 
-            downloading_msg = await message.reply_text(f"📥 Mengunduh **{filename}** ({filesize})...", quote=True)
+            downloading_msg = await message.reply_text(f"<blockquote><b>📥 Mengunduh **{filename}** ({filesize})...</b></blockquote>", quote=True)
 
             file_path = f"./{filename}"
             file_response = requests.get(file_url, stream=True)
@@ -48,15 +48,15 @@ async def _(client, message):
 
             if mime_type:
                 if mime_type.startswith("image"):
-                    await message.reply_photo(file_path, caption=f"✅ **Gambar berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`")
+                    await message.reply_photo(file_path, caption=f"<blockquote><b>✅ **Gambar berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`</b></blockquote>")
                 elif mime_type.startswith("video"):
-                    await message.reply_video(file_path, caption=f"✅ **Video berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`")
+                    await message.reply_video(file_path, caption=f"<blockquote><b>✅ **Video berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`</b></blockquote>")
                 elif mime_type.startswith("audio"):
-                    await message.reply_audio(file_path, caption=f"✅ **Audio berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`")
+                    await message.reply_audio(file_path, caption=f"<blockquote><b>✅ **Audio berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`</b></blockquote>")
                 else:
-                    await message.reply_document(file_path, caption=f"✅ **File berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`")
+                    await message.reply_document(file_path, caption=f"<blockquote><b>✅ **File berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`</b></blockquote>")
             else:
-                await message.reply_document(file_path, caption=f"✅ **File berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`")
+                await message.reply_document(file_path, caption=f"<blockquote><b>✅ **File berhasil diunduh!**\n📂 **Nama:** `{filename}`\n📦 **Ukuran:** `{filesize}`</b></blockquote>")
 
             os.remove(file_path)
 
