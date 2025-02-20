@@ -1,39 +1,44 @@
-import random
 import requests
+import random
 from PyroUbot import *
 
-__MODULE__ = "ᴛᴀғsɪʀ"
-__HELP__ = """
-<blockquote><b>Bantuan Untuk tafsir
+def get_random_tafsir(query):
+    API_URL = "https://api.botcahx.eu.org/api/islamic/tafsirsurah"
+    API_KEY = "Boyy"
 
-Perintah : <code>{0}tafsir</code>
-    Tafsir adalah ilmu yang menjelaskan makna Al-Qur'an, hukum-hukumnya, dan petunjuk-petunjuknya.</b></blockquote>
-"""
+    params = {"text": query, "apikey": API_KEY}
+
+    try:
+        response = requests.get(API_URL, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        if data.get("status") and "result" in data:
+            tafsir_list = data["result"]
+            if tafsir_list:
+                tafsir = random.choice(tafsir_list)
+                return (
+                    f"<blockquote><b>📖 **{tafsir['surah']}**\n\n</b></blockquote>"
+                    f"<blockquote><b>{tafsir['tafsir']}\n\n</b></blockquote>"
+                    f"<blockquote><b>🔗 [Sumber]({tafsir['source']})</b></blockquote>"
+                )
+        return "<blockquote><b><emoji id=5215204871422093648>❌</emoji> Tidak ditemukan tafsir yang sesuai.</b></blockquote>"
+
+    except requests.exceptions.Timeout:
+        return "<blockquote><b><emoji id=5454415424319931791>⌛️</emoji> Permintaan waktu habis. Coba lagi nanti.</b></blockquote>"
+    except requests.exceptions.RequestException as e:
+        return f"<blockquote><b><emoji id=5213205860498549992>⚠️</emoji> Terjadi kesalahan saat mengambil tafsir: {e}</b></blockquote>"
 
 @PY.UBOT("tafsir")
-async def _(client, message):
-    try:
-        if len(message.command) < 2:
-            await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji> Mohon gunakan format yang benar.\nContoh: <code>.tafsir Nabi Muhammad</code>"
-            )
-            return
+async def tafsir_handler(client, message):
+    if len(message.command) < 2:
+        return await message.reply(
+            "<blockquote><b>**__<emoji id=5213205860498549992>⚠️</emoji> Gunakan perintah: `>tafsir <kata_kunci>`\n</b></blockquote>"
+            "<blockquote><b>Contoh: `>tafsir Muhammad`__**</b></blockquote>"
+        )
 
-        prs = await message.reply_text("<emoji id=5319230516929502602>🔍</emoji> Menjawab...")
-        query = message.text.split(' ', 1)[1]
-        response = requests.get(f'https://api.botcahx.eu.org/api/islamic/tafsirsurah?text={query}&apikey=Boyy')
+    query = " ".join(message.command[1:])
+    await message.reply("<blockquote><b><i><emoji id=4967797089971995307>🔍</emoji> Sedang mencari tafsir...</i></b></blockquote>")
 
-        try:
-            data = response.json()
+    tafsir_text = get_random_tafsir(query)
 
-            if "result" in data and "message" in data["result"]:
-                x = data["result"]["surah"]
-                y = data["result"]["tafsir"]
-                await prs.edit(f"<blockquote>SURAH: {x}                                 TAFSIR: {y}</blockquote>")
-            else:
-                await prs.edit("❌ Respons API tidak memiliki data yang diharapkan.")
-        except Exception as err:
-            await prs.edit(f"⚠️ Terjadi kesalahan saat memproses respons API: {err}")
-
-    except Exception as e:
-        await message.reply_text(f"⚠️ Terjadi kesalahan: {e}")
+    await message.reply(tafsir_text, disable_web_page_preview=True)
