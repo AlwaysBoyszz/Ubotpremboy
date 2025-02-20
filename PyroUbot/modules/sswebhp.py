@@ -13,7 +13,7 @@ untuk screenshot website hp</b></blockquote>
 """
 
 def get_ssweb_image(url):
-    api_url = "https://api.botcahx.eu.org/api/tools/sshp
+    api_url = "https://api.botcahx.eu.org/api/tools/sshp"
     params = {
         "url": url,
         "device": "desktop",
