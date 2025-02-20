@@ -20,7 +20,7 @@ async def pinterest(client, message):
     err = await EMO.GAGAL(client)
     jalan = await message.reply(f"{prs}<b>ᴘʀᴏᴄᴇssɪɴɢ...</b>")
     chat_id = message.chat.id
-    url = "https://api.botcahx.eu.org/api/randomgambar/couplepp?apikey=Boysz"
+    url = "https://api.botcahx.eu.org/api/randomgambar/couplepp?apikey=Boyy"
     response = requests.get(url)
 
     if response.status_code == 200:
