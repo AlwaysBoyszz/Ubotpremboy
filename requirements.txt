@@ -17,6 +17,7 @@ unidecode
 filetype
 attrify
 uvloop
+geopy
 pySmartDL
 html2text
 removebg
