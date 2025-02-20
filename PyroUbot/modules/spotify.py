@@ -34,7 +34,7 @@ async def spotify_search(client, message):
     
     track_url = tracks[0]["url"]
     
-    await proses_msg.edit_text("👅 Mengunduh lagu...")
+    await proses_msg.edit_text("<emoji id=4943239162758169437>🤩</emoji> Mengunduh lagu...")
     
     download_url = f"https://api.botcahx.eu.org/api/download/spotify?url={track_url}&apikey=Boyy"
     download_response = requests.get(download_url).json()
