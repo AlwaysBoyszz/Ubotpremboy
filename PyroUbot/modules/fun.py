@@ -7,7 +7,7 @@ from pyrogram.types import Message
 from PyroUbot import *
 
 
-__MODULE__ = "fun"
+__MODULE__ = "ғᴜɴ 2"
 __HELP__ = """
 <blockquote>✮ Bantuan Untuk Fun ✮
 
