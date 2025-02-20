@@ -3,13 +3,13 @@ import datetime
 import requests
 from PyroUbot import *
 
-__MODULE__ = "ss ᴡᴇʙ"
+__MODULE__ = "ss ᴡᴇʙ ᴘᴄ"
 __HELP__ = """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ss ᴡᴇʙ ✮</b>
+<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ss ᴡᴇʙ pc ✮</b>
 
 <blockquote><b>perintah :
 <code>{0}ssweb</code> link
-untuk screenshot website</b></blockquote>
+untuk screenshot website pc</b></blockquote>
 """
 
 def get_ssweb_image(url):
@@ -41,7 +41,7 @@ async def screenshot_handler(client, message):
     if not url.startswith(("http://", "https://")):
         url = "https://" + url
 
-    await message.reply_text("<b><i>PROSES KINGZ ♛</i></b>")
+    await message.reply_text("<b><i>PROSES SS PAKAI PC KINGZ ♛</i></b>")
 
     image_data = get_ssweb_image(url)
     if not image_data:
@@ -52,6 +52,6 @@ async def screenshot_handler(client, message):
     with open(filepath, "wb") as file:
         file.write(image_data)
 
-    await client.send_photo(message.chat.id, filepath, caption="**__Nih Kingz Gambarnya Sudah Di Screenshot.__**")
+    await client.send_photo(message.chat.id, filepath, caption="**__Nih Kingz Gambarnya Sudah Di Screenshot Pakai Pc.__**")
     os.remove(filepath)
     
