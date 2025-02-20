@@ -7,7 +7,7 @@ __HELP__ = """
 <b>♛ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ xɴxx ♛</b>
 <blockquote><b>
 Perintah :
-<code>{0}xn</code> kata pencarian
+<code>{0}xnxx</code> kata pencarian
 Mendownload Video Yang Di Inginkan.</b></blockquote>
 """
 
