@@ -2,6 +2,7 @@ import os
 import subprocess
 from pyrogram import Client, filters
 from PyroUbot import PY
+import shutil
 from pyrogram.types import Message
 
 __MODULE__ = "ᴇɴᴄʀʏᴘᴛ ʜᴀʀᴅ"
