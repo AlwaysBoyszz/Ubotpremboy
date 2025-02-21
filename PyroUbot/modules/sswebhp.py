@@ -41,7 +41,7 @@ async def screenshot_handler(client, message):
     if not url.startswith(("http://", "https://")):
         url = "https://" + url
 
-    await message.reply_text("<b><i>PROSES SS PAKAI HP KINGZ ♛</i></b>")
+    await message.reply_text("<b><i>PROSES SCREENSHOT PAKAI HP KINGZ ♛</i></b>")
 
     image_data = get_ssweb_image(url)
     if not image_data:
