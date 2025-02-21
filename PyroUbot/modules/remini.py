@@ -1,74 +1,65 @@
-import aiohttp
-import filetype
 import requests
-from io import BytesIO
+import os
 from PyroUbot import *
+from pyrogram.types import Message
 
-__MODULE__ = "ʀᴇᴍɪɴɪ"
+def remini(image_path, model_type="enhance"):
+    valid_models = ["enhance", "recolor", "dehaze"]
+    if model_type not in valid_models:
+        model_type = "enhance"
+
+    url = f"https://inferenceengine.vyro.ai/{model_type}"
+    with open(image_path, "rb") as img_file:
+        files = {
+            "model_version": (None, "1"),
+            "image": ("enhance_image_body.jpg", img_file, "image/jpeg"),
+        }
+        headers = {
+            "User-Agent": "okhttp/4.9.3",
+            "Connection": "Keep-Alive",
+            "Accept-Encoding": "gzip",
+        }
+        response = requests.post(url, files=files, headers=headers)
+
+    if response.status_code == 200:
+        return response.content
+    else:
+        raise Exception(
+            f"Request failed with status code {response.status_code}: {response.text}"
+        )
+__MODULE__ = "remini"
 __HELP__ = """
-<blockquote><b>『 ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ʀᴇᴍɪɴɪ 』</b>
+<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ hd ✮<b>
 
-  <b>• ᴘᴇʀɪɴᴛᴀʜ:</b> <code>{0}remini</code> [ʀᴇᴘʟʏ ᴛᴏ ᴘʜᴏᴛᴏ]
-  <b>• ᴘᴇɴᴊᴇʟᴀsᴀɴ:</b> ᴜɴᴛᴜᴋ ᴍᴇɴɢʜᴅ/ʜᴀʟᴜsᴋᴀɴ ɢᴀᴍʙᴀʀ</blockquote>
+<blockquote><b>perintah :
+<code>{0}remini</code></b></blockquote>
 """
 
-async def upload_media(message):
-    media = await message.reply_to_message.download()
-    url = "https://catbox.moe/user/api.php"
-
-    async with aiohttp.ClientSession() as session:
-        # Cek apakah media adalah objek file atau path
-        if isinstance(media, str):
-            # Jika media adalah path file
-            with open(media, "rb") as file:
-                files = {"file": file}
-                async with session.post(url, data=files) as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        link = data["fileInfo"]["url"]
-                        return link
-                    else:
-                        return f"Error: {response.status}, {await response.text()}"
-        else:
-            # Jika media adalah objek file
-            files = {"file": media}
-            async with session.post(url, data=files) as response:
-                if response.status == 200:
-                    data = await response.json()
-                    link = data["fileInfo"]["url"]
-                    return link
-                else:
-                    return f"Error: {response.status}, {await response.text()}"
-
 @PY.UBOT("remini|hd")
-async def _(client, message):
+@PY.TOP_CMD
+async def process_image(client, message):
+    if not message.reply_to_message or not message.reply_to_message.photo:
+        await message.reply("<blockquote><b>Reply gambar yang mau di hd in dong Kingz</b></blockquote>")
+        return
+
+    await message.reply("<blockquote><b>Proses Kingz...</b></blockquote>")
+
     try:
-        if not message.reply_to_message:
-            return await message.reply("Silakan balas gambar yang ingin dihaluskan.")
-        
-        reply_message = message.reply_to_message
-        xx = await message.reply("<b>Proses sedang dilakukan, mohon tunggu...</b>")
-        
-        foto = await upload_media(message)
-        if not foto:
-            await xx.edit("<b>Penggunaan salah, mohon reply foto.</b>")
-            return
-        
-        api_url = f'https://api.botcahx.eu.org/api/tools/remini?url={foto}&apikey=Boyy'
-        
-        async with aiohttp.ClientSession() as session:
-            async with session.get(api_url) as api_response:
-                if api_response.status != 200:
-                    await xx.edit(f"Failed to fetch image: HTTP {api_response.status}")
-                    return
-                
-                image = await api_response.json()
-                url = image.get("url")
-                if url:
-                    await client.send_photo(message.chat.id, url, caption='<b>Berhasil Di Haluskan Kingz</b>')
-                    await xx.delete()
-                else:
-                    await xx.edit('Image URL not found in the response.')
-    
+        file_path = await message.reply_to_message.download()
+
+        enhanced_image = remini(file_path, "enhance")
+
+        temp_output_path = "enhanced_image.jpg"
+        with open(temp_output_path, "wb") as temp_file:
+            temp_file.write(enhanced_image)
+
+        await client.send_photo(
+            chat_id=message.chat.id,
+            photo=temp_output_path,
+            caption="<blockquote><b>SUDAH DI HD IN KINGZ</b></blockquote>",
+            reply_to_message_id=message.id,
+        )
+
+        os.remove(temp_output_path)
     except Exception as e:
-        await message.reply(f"An error occurred: {str(e)}")
+        await message.reply(f"<blockquote><b>YAAH EROR NIH KINGZ:(</b></blockquote>{e}")
