@@ -3,17 +3,17 @@ import datetime
 import requests
 from PyroUbot import *
 
-__MODULE__ = "ss ᴡᴇʙ"
+__MODULE__ = "ss ᴡᴇʙ ʜᴘ"
 __HELP__ = """
-<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ss ᴡᴇʙ ✮</b>
+<b>✮ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ss ᴡᴇʙ ʜᴘ ✮</b>
 
 <blockquote><b>perintah :
-<code>{0}ssweb</code> link
-untuk screenshot website</b></blockquote>
+<code>{0}sswebhp</code> link
+untuk screenshot website hp</b></blockquote>
 """
 
 def get_ssweb_image(url):
-    api_url = "https://api.botcahx.eu.org/api/tools/ssweb"
+    api_url = "https://api.botcahx.eu.org/api/tools/sshp"
     params = {
         "url": url,
         "device": "desktop",
@@ -30,7 +30,7 @@ def get_ssweb_image(url):
     except requests.exceptions.RequestException:
         return None
 
-@PY.UBOT("ssweb")
+@PY.UBOT("sswebhp")
 async def screenshot_handler(client, message):
     args = message.text.split(maxsplit=1)
     if len(args) < 2:
