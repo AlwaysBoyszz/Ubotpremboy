@@ -13,7 +13,7 @@ Contoh: <code>.calc 5 + 10 * 2</code>
 Fitur ini bisa digunakan oleh siapa saja.</blockquote></b>
 """
 
-@PY.BOT("calc")
+@PY.UBOT("calc")
 async def _(client, message):
     args = message.text.split(" ", 1)
     if len(args) < 2:
