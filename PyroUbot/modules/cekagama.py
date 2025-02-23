@@ -24,16 +24,27 @@ async def cek_agama(client, message):
     if len(args) < 2:
         return await message.reply_text("⚠️ Gunakan format: .cekagama [nama]")
 
+await message.reply_text(f"<b><i>PROSES MENDETEKSI AGAMANYA '{nama}'</i></b>")
+
     nama = args[1]
-    agama = random.choice(AGAMA_LIST)
-    hasil = f'''<blockquote><b>
+    khodam = random.choice(AGAMA_LIST)
+    caption = f'''
     HASIL DETEKSI AGAMA DARI {nama}
-    ╭──────────────────────
-    ├ ɴᴀᴍᴀ : **{nama}**
-    ├ ᴀɢᴀᴍᴀ: **{agama}**
+    ╭───────────────────────
+    ├ ɴᴀᴍᴀ : '{nama}'
+    ├ ᴀɢᴀᴍᴀ: '{agama}'
     ├ sᴇʟᴀᴍᴀᴛ ʏᴀ ᴀɢᴀᴍᴀ ɴʏᴀ ᴄᴏᴄᴏᴋ ᴋᴏᴋ
-    ╰──────────────────────
-    ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁</blockquote></b>
+    ╰────────────────────────
+    ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁
     
     '''
-    await message.reply_text(hasil)
+    if len(caption) > 1024:
+            caption = caption[:1000] + '...'
+
+        await client.send_photo(
+            message.chat.id,
+            photo= f"https://files.catbox.moe/94ii8p.jpg",
+            caption=caption
+        )
+        
+    await message.reply_text(caption)
