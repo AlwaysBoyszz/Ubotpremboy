@@ -3,8 +3,8 @@ from pyrogram import *
 from pyrogram import Client, filters
 from PyroUbot import PY
 
-MODULE = "ᴄᴇᴋ ᴀɢᴀᴍᴀ"
-HELP = """
+__MODULE__ = "ᴄᴇᴋ ᴀɢᴀᴍᴀ"
+__HELP__ = """
 <blockquote><b>Bantuan Untuk Cek Agama</b>
 
 Perintah:
@@ -26,7 +26,7 @@ async def cek_agama(client, message):
 
     nama = args[1]
     khodam = random.choice(AGAMA_LIST)
-    caption = f'''
+    hasil = f'''
     HASIL DETEKSI AGAMA DARI {nama}
     ╭───────────────────────
     ├ ɴᴀᴍᴀ : '{nama}'
@@ -36,13 +36,4 @@ async def cek_agama(client, message):
     ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁
     
     '''
-    if len(caption) > 1024:
-            caption = caption[:1000] + '...'
-
-        await client.send_photo(
-            message.chat.id,
-            photo= f"https://files.catbox.moe/94ii8p.jpg",
-            caption=caption
-        )
-        
-    await message.reply_text(caption)
+    await message.reply_text(hasil)
