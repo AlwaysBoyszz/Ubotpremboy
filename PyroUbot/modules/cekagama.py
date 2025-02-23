@@ -28,11 +28,11 @@ async def cek_agama(client, message):
     agama = random.choice(AGAMA_LIST)
     hasil = f'''<blockquote><b>
     HASIL DETEKSI AGAMA DARI {nama}
-    ╭──────────────────────
+     ╭──────────────────────
     ├ ɴᴀᴍᴀ : **{nama}**
     ├ ᴀɢᴀᴍᴀ: **{agama}**
     ├ sᴇʟᴀᴍᴀᴛ ʏᴀ ᴀɢᴀᴍᴀ ɴʏᴀ ᴄᴏᴄᴏᴋ ᴋᴏᴋ
-    ╰──────────────────────
+     ╰──────────────────────
     ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁</blockquote></b>
     
     '''
