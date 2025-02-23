@@ -28,7 +28,7 @@ await message.reply_text(f"<b><i>PROSES MENDETEKSI AGAMANYA '{nama}'</i></b>")
 
     nama = args[1]
     khodam = random.choice(AGAMA_LIST)
-    caption = f'''
+    hasil = f'''
     HASIL DETEKSI AGAMA DARI {nama}
     ╭───────────────────────
     ├ ɴᴀᴍᴀ : '{nama}'
@@ -38,13 +38,4 @@ await message.reply_text(f"<b><i>PROSES MENDETEKSI AGAMANYA '{nama}'</i></b>")
     ɴᴏᴛᴇ ᴍᴀᴀғ ʏᴀ {nama} ᴄᴜᴍᴀ ʙᴇᴄᴀɴᴅᴀ ᴋᴏᴋ 😁
     
     '''
-    if len(caption) > 1024:
-            caption = caption[:1000] + '...'
-
-        await client.send_photo(
-            message.chat.id,
-            photo= f"https://files.catbox.moe/94ii8p.jpg",
-            caption=caption
-        )
-        
-    await message.reply_text(caption)
+    await message.reply_text(hasil)
