@@ -26,7 +26,7 @@ async def pin(client, message):
     
     a = message.text.split(' ', 1)[1]
     chat_id = message.chat.id
-    url = f"https://api.botcahx.eu.org/api/search/pinterest?text1={a}&apikey=Boysz"
+    url = f"https://api.botcahx.eu.org/api/search/pinterest?text1={a}&apikey=Boyy"
     
     try:
         response = requests.get(url)
