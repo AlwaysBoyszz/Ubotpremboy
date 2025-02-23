@@ -27,7 +27,7 @@ async def cek_agama(client, message):
 await message.reply_text(f"<b><i>PROSES MENDETEKSI AGAMANYA '{nama}'</i></b>")
 
     nama = args[1]
-    khodam = random.choice(AGAMA_LIST)
+    agama = random.choice(AGAMA_LIST)
     hasil = f'''
     HASIL DETEKSI AGAMA DARI {nama}
     ╭───────────────────────
