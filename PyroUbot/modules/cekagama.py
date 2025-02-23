@@ -24,8 +24,6 @@ async def cek_agama(client, message):
     if len(args) < 2:
         return await message.reply_text("⚠️ Gunakan format: .cekagama [nama]")
 
-await message.reply_text(f"<b><i>PROSES MENDETEKSI AGAMANYA '{nama}'</i></b>")
-
     nama = args[1]
     agama = random.choice(AGAMA_LIST)
     hasil = f'''
