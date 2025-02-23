@@ -45,7 +45,6 @@ def create_subdomain(zone_id, subdomain, target_ip):
     return response.json()
 
 @PY.UBOT("subdocreate")
-@PY.OWNER
 @PY.TOP_CMD
 async def subdomain_create(client, message):
     args = message.text.split(maxsplit=3)
